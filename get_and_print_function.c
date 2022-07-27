@@ -22,7 +22,7 @@ print keys[] = {
 {"hd", print_sh_int}, {"hu", print_sh_unt}, {"ho", print_sh_oct},
 {"hx", base_s16}, {"hX", print_sh_upx}, {"#o", print_num_oct},
 {"+ i", print_int_plus}, {"+ d", print_int_plus}, {" %", print_prg},
-{"+u", print_unt}, {"%r", print_prg}, {NULL, NULL}
+{"+u", print_unt}, {"%r", print_rev}, {NULL, NULL}
 };
 int i = 0, j = 0, f_index;
 f_index = index;
@@ -67,7 +67,7 @@ print keys[] = {
 {"hd", print_sh_int}, {"hu", print_sh_unt}, {"ho", print_sh_oct},
 {"hx", base_s16}, {"hX", print_sh_upx}, {"#o", print_num_oct},
 {"+ i", print_int_plus}, {"+ d", print_int_plus}, {" %", print_prg},
-{"+u", print_unt}, {"%r", print_prg}, {NULL, NULL}
+{"+u", print_unt}, {"%r", print_rev}, {NULL, NULL}
 };
 int i = 0, j = 0, f_index;
 f_index = index;

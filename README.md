@@ -1,29 +1,8 @@
 ## C - printf
 This is a group task done at ALX Software Engineering School by Olalekan Okewale and Adewuyi Abdul-Azeez Adeyemi while learning C programming language.
-=======
-This is a group task done at ALX Software engineering by Olalekan Okewale and Adewuyi Abdul-Azeez Adeyemi during the learning of C programming language.
-
-## Requirements
-The files will be compiled using gcc with options -Wall -Werror -Wextra -pedantic -std=gnu89.
-All the files must end with a new line.
-The code will be checked using betty-style.pl and betty-doc.pl
-Global variables are not allowed.
-The files should not contain more than five functions.
-
-## Authorized functions and Macros
-```
-write (man 2 write)
-malloc (man 3 malloc)
-free (man 3 free)
-va_start (man 3 va_start)
-va_end (man 3 va_end)
-va_copy (man 3 va_copy)
-va_arg (man 3 va_arg)
-```
 
 ## Details
-
-> In this project, we recreated a replicate of the ```printf``` function found in
+> In this project, we recreated a mini-verison of the ```printf``` function found in
 > the ```stdio.h``` library in the C programming language. This function allows
 > us to print any argument given to the standard output or terminal and similar
 > printing functions can be found in any programming language. This means we can
@@ -43,7 +22,7 @@ where **format** contains the string that is printed.
 > reverse your strings, transform any number to binary and octal bases,
 > and encrypt your string with rot13 encryption. 
 
-### Description of what each file does:
+### Description of what each file shows:
 ```
 printf.c ---------------------------- holds custom _printf function that performs formatted output conversion and print data
 main.h ------------------------ holds prototypes of functions spread across all files
