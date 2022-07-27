@@ -74,4 +74,7 @@ for (ibuf = len; ibuf > 1024; ibuf -= 1024)
 }
 write_buf(buffer, ibuf), free(buffer), va_end(list);
 return (len);
+=======
+write_buffer(buffer, len, list);
+return (total_len);
 }
