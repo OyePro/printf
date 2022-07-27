@@ -1,37 +1,40 @@
 #include "main.h"
 /**
- * base_two - convert int to binary
- * @list: int to change
- * Return: string with binary
+ * base_two - prints decimal in binary
+ * @list: input string
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
-char *base_two(va_list list)
+int base_two(va_list list, char *buf, unsigned int ibuf)
 {
-int j = 0, bin = 1;
-int i, k;
-char *s;
-k = va_arg(list, int);
-i = k;
-s = malloc(sizeof(char) * 33);
-if (s == NULL)
-return (NULL);
-if (k < 0)
+int int_input, count, i, first_one, isnegative;
+char *binary;
+int_input = va_arg(list, int);
+isnegative = 0;
+if (int_input == 0)
 {
-s[0] = 1 + '0';
-j++;
-k *= -1;
-i *= -1;
+ibuf = check_buf(buf, '0', ibuf);
+return (1);
 }
-while (k > 1)
+if (int_input < 0)
 {
-k /= 2;
-bin *= 2;
+int_input = (int_input * -1) - 1;
+isnegative = 1;
 }
-while (bin > 0)
+binary = malloc(sizeof(char) * (32 + 1));
+binary = fill_binary_array(binary, int_input, isnegative, 32);
+first_one = 0;
+for (count = i = 0; binary[i]; i++)
 {
-s[j++] = (i / bin + '0');
-i %= bin;
-bin /= 2;
+if (first_one == 0 && binary[i] == '1')
+first_one = 1;
+if (first_one == 1)
+{
+ibuf = check_buf(buf, binary[i], ibuf);
+count++;
 }
-s[j] = '\0';
-return (s);
+}
+free(binary);
+return (count);
 }

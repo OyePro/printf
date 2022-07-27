@@ -1,17 +1,16 @@
 #include "main.h"
 /**
- * print_rev - writes the str in reverse
+ * print_str - writes the string to stdout
  * @list: input string
  * @buf: buffer pointer
  * @ibuf: index for buffer pointer
- * Return: number of chars printed.
+ * Return: On success 1.
  */
-int print_rev(va_list list, char *buf, unsigned int ibuf)
+int print_str(va_list list, char *buf, unsigned int ibuf)
 {
 char *str;
 unsigned int i;
-int j = 0;
-char nill[] = "(llun)";
+char nill[] = "(null)";
 str = va_arg(list, char *);
 if (str == NULL)
 {
@@ -20,11 +19,6 @@ ibuf = check_buf(buf, nill[i], ibuf);
 return (6);
 }
 for (i = 0; str[i]; i++)
-;
-j = i - 1;
-for (; j >= 0; j--)
-{
-ibuf = check_buf(buf, str[j], ibuf);
-}
+ibuf = check_buf(buf, str[i], ibuf);
 return (i);
 }

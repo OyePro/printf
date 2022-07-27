@@ -1,32 +1,38 @@
 #include "main.h"
 /**
- * rot13 - encrypts string with rot13
- * @list: string to change
- * Return: modified string
+ * rot13 - writes the str in ROT13
+ * @list: input string
+ * @buf: buffer pointer
+ * @ibuf: index for buffer pointer
+ * Return: number of chars printed.
  */
-char *rot13(va_list list)
+int rot13(va_list list, char *buf, unsigned int ibuf)
 {
-int i = 0;
+char alf[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 char *str;
-char *new_str;
+unsigned int i, j, k;
+char nill[] = "(avyy)";
 str = va_arg(list, char *);
-new_str = malloc(sizeof(char) * (_strlen(str) + 1));
-if (new_str == NULL)
-return (NULL);
-while (str[i] != '\0')
+if (str == NULL)
 {
-if ((str[i] >= 'a' && str[i] <= 'm') || (str[i] >= 'A' && str[i] <= 'M'))
+for (i = 0; nill[i]; i++)
+ibuf = check_buf(buf, nill[i], ibuf);
+return (6);
+}
+for (i = 0; str[i]; i++)
 {
-new_str[i] = str[i] + 13;
-}
-else if ((str[i] >= 'n' && str[i] <= 'z') || (str[i] >= 'N' && str[i] <= 'Z'))
+for (k = j = 0; alf[j]; j++)
 {
-new_str[i] = str[i] - 13;
+if (str[i] == alf[j])
+{
+k = 1;
+ibuf = check_buf(buf, rot[j], ibuf);
+break;
 }
-else
-(new_str[i] = str[i]);
-i++;
 }
-new_str[i] = '\0';
-return (new_str);
+if (k == 0)
+ibuf = check_buf(buf, str[i], ibuf);
+}
+return (i);
 }
