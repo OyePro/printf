@@ -30,7 +30,7 @@ get_and_print_function.c ----- holds functions to get appropriate function, and 
 dec_to_hexa.c--------------------------- handles %x /  to convert decimal to hexadecimal
 dec_to_upp-hex.c--------------------------- handles %X /  to convert decimal to hexadecimal 
 print_add.c--------------------------- handles %p to print the address of an input variable
-print_prg.c--------------------------- 
+print_prg.c--------------------------- handles %% to print %
 print_usr.c--------------------------- handles %S to print string and value of non-printed chars
 reverse_strings.c--------------------------- handles %r to write the string to stdout in reverse 
 unsigned_integer.c--------------------------- handles %u to print unsigned integer
