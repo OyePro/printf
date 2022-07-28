@@ -17,12 +17,16 @@ print keys[] = {
 {"+o", print_oct}, {"+x", base_16}, {"+X", print_upx}, {" i", print_sint},
 {" d", print_sint}, {" u", print_unt}, {" o", print_oct}, {" x", base_16},
 {" X", print_upx}, {"R", rot13}, {"r", print_rev}, {"%", print_prg},
-/* {"l", print_prg}, {"h", print_prg}, */
 {" +d", print_int_plus}, {"lX", print_lupx}, {"hi", print_sh_int},
 {"hd", print_sh_int}, {"hu", print_sh_unt}, {"ho", print_sh_oct},
 {"hx", base_s16}, {"hX", print_sh_upx}, {"#o", print_num_oct},
 {"+ i", print_int_plus}, {"+ d", print_int_plus}, {" %", print_prg},
-{"+u", print_unt}, {" +i", print_int_plus}, {".6d", print_int}, {NULL, NULL}
+{"+u", print_unt}, {" +i", print_int_plus}, {".6d", print_sh_unt},
+{"6d", print_int}, {"6i", print_int}, {"6u", print_unt}, {"6o", print_oct},
+{"6x", base_16}, {"6X", print_upx}, {"6c", print_char}, {"6s", print_str},
+{"*d", print_int}, {"*i", print_int}, {"*u", print_unt}, {"*o", print_oct},
+{"*x", base_16}, {"*X", print_upx}, {"*c", print_char}, {"*s", print_str},
+{"l", print_prg}, {"h", print_prg}, {NULL, NULL}
 };
 int i = 0, j = 0, f_index;
 f_index = index;
@@ -62,12 +66,16 @@ print keys[] = {
 {"+o", print_oct}, {"+x", base_16}, {"+X", print_upx}, {" i", print_sint},
 {" d", print_sint}, {" u", print_unt}, {" o", print_oct}, {" x", base_16},
 {" X", print_upx}, {"R", rot13}, {"r", print_rev}, {"%", print_prg},
-/* {"l", print_prg}, {"h", print_prg}, */
 {" +d", print_int_plus}, {"lX", print_lupx}, {"hi", print_sh_int},
 {"hd", print_sh_int}, {"hu", print_sh_unt}, {"ho", print_sh_oct},
 {"hx", base_s16}, {"hX", print_sh_upx}, {"#o", print_num_oct},
 {"+ i", print_int_plus}, {"+ d", print_int_plus}, {" %", print_prg},
-{"+u", print_unt}, {" +i", print_int_plus}, {".6d", print_int}, {NULL, NULL}
+{"+u", print_unt}, {" +i", print_int_plus}, {".6d", print_lunt},
+{"6d", print_int}, {"6i", print_int}, {"6u", print_unt}, {"6o", print_oct},
+{"6x", base_16}, {"6X", print_upx}, {"6c", print_char}, {"6s", print_str},
+{"*d", print_int}, {"*i", print_int}, {"*u", print_unt}, {"*o", print_oct},
+{"*x", base_16}, {"*X", print_upx}, {"*c", print_char}, {"*s", print_str},
+{"l", print_prg}, {"h", print_prg}, {NULL, NULL}
 };
 int i = 0, j = 0, f_index;
 f_index = index;
